@@ -1,9 +1,6 @@
-const key = localStorage.getItem("inicioSesion")
+let key = localStorage.getItem("inicioSesion")
 console.log (key)
-function traeKey (){
-    return localStorage.getItem("key");
-    let llave = localStorage.getItem("key");
-}
+
 
 /*function validaCredenciales(credenciales) {
   return fetch("https://basic-server-one.vercel.app/login", {
@@ -41,7 +38,7 @@ function chequeaCredenciales (){
   return localStorage.getItem("email") && localStorage.getItem("contra");
 }*/
 
-if (key === undefined || key === null) {
+if (key === undefined || key === null || key == 0) {
     window.location.assign('./index.html')
 }
 
