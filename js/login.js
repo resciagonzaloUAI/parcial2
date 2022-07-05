@@ -66,6 +66,8 @@ function chequeaCredenciales (){
     return localStorage.getItem("email") && localStorage.getItem("pass");
 }
    
+
+
 if (chequeaCredenciales()) {
         const credenciales = {
           email: localStorage.getItem("email"),
