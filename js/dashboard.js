@@ -1,42 +1,4 @@
 let key = localStorage.getItem("inicioSesion")
-console.log (key)
-
-
-/*function validaCredenciales(credenciales) {
-  return fetch("https://basic-server-one.vercel.app/login", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      email: credenciales.email,
-      password: credenciales.pass,
-    }),
-  })
-    .then(function(respuesta) {
-      return respuesta.json()
-        .then(function (respuestaJSON) {
-          // Faltan cargar datos
-          if (respuestaJSON.success === false) {
-            return false;
-          }
-          // Datos Incorrectos
-          if (respuestaJSON.error === false) {
-            return true;
-          }
-          return false;
-        })
-        .catch(function(error) {
-          console.log(error);
-        });
-    })
-    .catch(function(error) {
-      console.log(error);
-    });
-}
-*/
-/*
-function chequeaCredenciales (){
-  return localStorage.getItem("email") && localStorage.getItem("contra");
-}*/
 
 if (key === undefined || key === null || key == 0) {
     window.location.assign('./index.html')

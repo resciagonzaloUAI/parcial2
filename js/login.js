@@ -18,13 +18,9 @@ login.addEventListener("submit", (e) => {
 
 
 
-
-
 validaCredenciales(credenciales)
 .then(function(successStatus) {
-    console.log(successStatus)
   if (successStatus) {
-    /*guardaCredenciales(credenciales)*/
     window.location.assign('./dashboard.html')
     inicioSesion = 1;
     localStorage.setItem("inicioSesion", inicioSesion);
@@ -40,11 +36,6 @@ validaCredenciales(credenciales)
 })
 ;
 
-/*
-function guardaCredenciales(credenciales) {
-    localStorage.setItem("email", credenciales.email)
-    localStorage.setItem("contra", credenciales.pass)
-}*/
 
 function validaCredenciales (credenciales) {
     return fetch("https://basic-server-one.vercel.app/login", {
@@ -61,16 +52,12 @@ function validaCredenciales (credenciales) {
               // Si faltan datos
               if (respuestaJSON.success === false) {
                 return false;
-                inicioSesion = 0;
-                localStorage.setItem("inicioSesion", 0);
               }
               // Si los datos son correctos
               if (respuestaJSON.error === false) {
                 return true;
               }
               return false;
-              inicioSesion = 0;
-              localStorage.setItem("inicioSesion", 0);
             })
             .catch(function(error) {
               console.log(error);
@@ -85,10 +72,6 @@ function validaCredenciales (credenciales) {
         });
 }
 
-/*
-function chequeaCredenciales (){
-    return localStorage.getItem("email") && localStorage.getItem("pass");
-}*/
 
 if (inicioSesion==0){
         let credenciales = {
@@ -112,26 +95,8 @@ if (inicioSesion==0){
           window.location.assign('./index.html')
         }
     }
-    console.log(inicioSesion)
-/*
-    window.onload = function() {
-        var modal = document.getElementById("myModal");
-        var btn = document.getElementById("submit");
-        var span = document.getElementsByClassName("close")[0];
-        
-        // Cierra el modal
-        span.onclick = function () {
-          modal.style.display = "none";
-        };
-        
-        // Cierra el modal (click afuera)
-        window.onclick = function (event) {
-          if (event.target == modal) {
-            modal.style.display = "none";
-          }
-        }
-            };
-    */
+
+
     // Get the modal
 const modal = document.getElementById("myModal");
 // Get the button that opens the modal
