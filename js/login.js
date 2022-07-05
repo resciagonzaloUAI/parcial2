@@ -14,7 +14,7 @@ validaCredenciales(credenciales)
 .then(function(successStatus) {
   if (successStatus) {
     guardaCredenciales(credenciales)
-    window.location.href('/dashboard.html')
+    window.location.assign('file:///Users/gonzalorescia/Desktop/UAI/Materias/4to/LPPA/Parcial%202/parcial2/dashboard.html')
   } else {
     modal.style.display = "block";
   }
@@ -66,18 +66,16 @@ function chequeaCredenciales (){
     return localStorage.getItem("email") && localStorage.getItem("pass");
 }
    
-
-
 if (chequeaCredenciales()) {
         const credenciales = {
           email: localStorage.getItem("email"),
-          pass: localStorage.getItem("pass"),
+          pass: localStorage.getItem("contra"),
         };
     
         validaCredenciales(credenciales)
           .then(function(successStatus) {
             if (successStatus) {
-              window.location.assign('file:///Users/gonzalorescia/Desktop/UAI/Materias/4to/LPPA/Parcial%202/parcial2/dashboard.html')
+              window.location.assign('/dashboard.html')
             }
           })
           .catch(function(error) {

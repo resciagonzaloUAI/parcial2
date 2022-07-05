@@ -10,11 +10,11 @@ function validaCredenciales(credenciales) {
     .then(function(respuesta) {
       return respuesta.json()
         .then(function (respuestaJSON) {
-          // Faltan datos
+          // Faltan cargar datos
           if (respuestaJSON.success === false) {
             return false;
           }
-          // Datos incorrectos
+          // Datos Incorrectos
           if (respuestaJSON.error === false) {
             return true;
           }
@@ -30,7 +30,7 @@ function validaCredenciales(credenciales) {
 }
 
 function chequeaCredenciales (){
-  return localStorage.getItem("email") && localStorage.getItem("pass");
+  return localStorage.getItem("email") && localStorage.getItem("contra");
 }
 
 if (!chequeaCredenciales()) {
@@ -40,7 +40,7 @@ if (!chequeaCredenciales()) {
 const logoutUser = document.getElementById('logout');
 logoutUser.addEventListener("click", function(){
   localStorage.clear();
-  window.location.assign("/index.html");
+  window.location.href("/index.html");
 });
 
 const tabla = (function (respuestaJson){
