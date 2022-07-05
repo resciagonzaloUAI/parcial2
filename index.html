@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./style/reset.css">
+<link rel="stylesheet" href="./style/styles.css">  
+
+<title>PARCIAL 2 LPPA</title>
+</head>
+<body>
+
+  <div id="contenido">
+    <div class="formulario">
+      <form id="login">
+        <fieldset>
+          <label for="email">Email</label>
+      <input id="email" type="email" placeholder="asd@asd.com"></input>
+    </fieldset>
+    <fieldset>
+      <label for="pass">Password</label>
+      <input id="pass" type="password"></input>
+    </fieldset>
+      <input id="submitB"  class="enviar-form btn btn-primary" type="submit" value="Iniciar Sesion">
+       <!-- MODAL -->
+       <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Error al iniciar sesion</h2>
+            </div>
+            <div class="modal-body">
+                <p>El usuario ingresado no es válido</p>
+            </div>
+            <div class="modal-footer">
+                <h3>.</h3>
+            </div>
+        </div>
+      </div>
+    </div>  
+    
+    </form>
+    </div>
+
+
+  
+
+
+
+
+
+  <footer>  
+    <div class="final">
+       <p class="textofinal"> LPPA - JULIO 2022 - 4TO INGENIERIA EN SISTEMAS DE INFORMACION</p>
+    </div>
+  </footer>
+  <script src="./js/login.js"></script>
+</body>
+</html>
