@@ -1,5 +1,5 @@
 
-function validaCredenciales(credenciales) {
+/* function validaCredenciales(credenciales) {
   return fetch("https://basic-server-one.vercel.app/login", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -43,7 +43,7 @@ logoutUser.addEventListener("click", function(){
   localStorage.clear();
   window.location.assign("/index.html");
 });
-
+*/
 const tabla = (function (respuestaJson){
   const tableContainer = document.getElementById('tableContainer');
   for(let i of respuestaJson['data']){

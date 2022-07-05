@@ -23,6 +23,17 @@ body {
     margin-top: 2%;
 }
 
+#tabla {
+    width: 100%;
+    border-color:black;
+    border-style: double;
+}
+
+.tablat {
+    border-style: double;
+}
+
+
 
 
 
