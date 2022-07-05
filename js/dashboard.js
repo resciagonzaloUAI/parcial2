@@ -1,4 +1,11 @@
-function validaCredenciales(credenciales) {
+const key = localStorage.getItem("inicioSesion")
+console.log (key)
+function traeKey (){
+    return localStorage.getItem("key");
+    let llave = localStorage.getItem("key");
+}
+
+/*function validaCredenciales(credenciales) {
   return fetch("https://basic-server-one.vercel.app/login", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -28,19 +35,20 @@ function validaCredenciales(credenciales) {
       console.log(error);
     });
 }
-
+*/
+/*
 function chequeaCredenciales (){
   return localStorage.getItem("email") && localStorage.getItem("contra");
-}
+}*/
 
-if (!chequeaCredenciales()) {
-    window.location.assign('/index.html')
+if (key === undefined || key === null) {
+    window.location.assign('file:///Users/gonzalorescia/Desktop/UAI/Materias/4to/LPPA/Parcial%202/parcial2/index.html')
 }
 
 const logoutUser = document.getElementById('logout');
 logoutUser.addEventListener("click", function(){
   localStorage.clear();
-  window.location.href("/index.html");
+  window.location.assign("/index.html");
 });
 
 const tabla = (function (respuestaJson){

@@ -1,6 +1,12 @@
 const form = document.getElementById("login");
 const email = document.getElementById("email");
 const pass = document.getElementById("pass");
+let inicioSesion = 0;
+
+let varGlob = localStorage.getItem("inicioSesion");
+if (varGlob == 1) {
+    window.location.assign('file:///Users/gonzalorescia/Desktop/UAI/Materias/4to/LPPA/Parcial%202/parcial2/dashboard.html');
+}
 
 
 login.addEventListener("submit", (e) => {
@@ -12,10 +18,15 @@ login.addEventListener("submit", (e) => {
 
 validaCredenciales(credenciales)
 .then(function(successStatus) {
+    console.log(successStatus)
   if (successStatus) {
-    guardaCredenciales(credenciales)
+    /*guardaCredenciales(credenciales)*/
     window.location.assign('file:///Users/gonzalorescia/Desktop/UAI/Materias/4to/LPPA/Parcial%202/parcial2/dashboard.html')
+    inicioSesion = 1;
+    localStorage.setItem("inicioSesion", inicioSesion);
   } else {
+    inicioSesion = 0;
+    localStorage.setItem("inicioSesion", inicioSesion);
     modal.style.display = "block";
   }
 })
@@ -25,10 +36,11 @@ validaCredenciales(credenciales)
 })
 ;
 
+/*
 function guardaCredenciales(credenciales) {
     localStorage.setItem("email", credenciales.email)
     localStorage.setItem("contra", credenciales.pass)
-}
+}*/
 
 function validaCredenciales (credenciales) {
     return fetch("https://basic-server-one.vercel.app/login", {
@@ -45,37 +57,47 @@ function validaCredenciales (credenciales) {
               // Si faltan datos
               if (respuestaJSON.success === false) {
                 return false;
+                inicioSesion = 0;
+                localStorage.setItem("inicioSesion", 0);
               }
-              // Si los datos son incorrectos
+              // Si los datos son correctos
               if (respuestaJSON.error === false) {
                 return true;
               }
               return false;
+              inicioSesion = 0;
+              localStorage.setItem("inicioSesion", 0);
             })
             .catch(function(error) {
               console.log(error);
+              inicioSesion = 0;
+              localStorage.setItem("inicioSesion", 0);
             });
         })
         .catch(function(error) {
           console.log(error);
+          inicioSesion = 0;
+          localStorage.setItem("inicioSesion", 0);
         });
 }
 
-
+/*
 function chequeaCredenciales (){
     return localStorage.getItem("email") && localStorage.getItem("pass");
-}
-   
-if (chequeaCredenciales()) {
-        const credenciales = {
-          email: localStorage.getItem("email"),
-          pass: localStorage.getItem("contra"),
+}*/
+
+if (inicioSesion==0){
+        let credenciales = {
+          email: document.getElementById("email"),
+          pass: document.getElementById("pass"),
         };
     
         validaCredenciales(credenciales)
           .then(function(successStatus) {
             if (successStatus) {
-              window.location.assign('/dashboard.html')
+                inicioSesion = 1;
+                localStorage.setItem("inicioSesion", 1);
+              window.location.assign('file:///Users/gonzalorescia/Desktop/UAI/Materias/4to/LPPA/Parcial%202/parcial2/dashboard.html')
             }
           })
           .catch(function(error) {
@@ -86,6 +108,7 @@ if (chequeaCredenciales()) {
           window.location.assign('file:///Users/gonzalorescia/Desktop/UAI/Materias/4to/LPPA/Parcial%202/parcial2/index.html')
         }
     }
+    console.log(inicioSesion)
 /*
     window.onload = function() {
         var modal = document.getElementById("myModal");
