@@ -5,7 +5,7 @@ let inicioSesion = 0;
 
 let varGlob = localStorage.getItem("inicioSesion");
 if (varGlob == 1) {
-    window.location.assign('/dashboard.html');
+    window.location.assign('./dashboard.html');
 }
 
 
@@ -19,13 +19,13 @@ login.addEventListener("submit", (e) => {
 
 
 
-      
+
 validaCredenciales(credenciales)
 .then(function(successStatus) {
     console.log(successStatus)
   if (successStatus) {
     /*guardaCredenciales(credenciales)*/
-    window.location.assign('/dashboard.html')
+    window.location.assign('./dashboard.html')
     inicioSesion = 1;
     localStorage.setItem("inicioSesion", inicioSesion);
   } else {
@@ -101,15 +101,15 @@ if (inicioSesion==0){
             if (successStatus) {
                 inicioSesion = 1;
                 localStorage.setItem("inicioSesion", 1);
-              window.location.assign('/dashboard.html')
+              window.location.assign('./dashboard.html')
             }
           })
           .catch(function(error) {
             console.log(error);
           })
     } else {
-        if (window.location.origin == '/dashboard.html'){
-          window.location.assign('/index.html')
+        if (window.location.origin == './dashboard.html'){
+          window.location.assign('./index.html')
         }
     }
     console.log(inicioSesion)

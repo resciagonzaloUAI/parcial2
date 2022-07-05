@@ -42,13 +42,13 @@ function chequeaCredenciales (){
 }*/
 
 if (key === undefined || key === null) {
-    window.location.assign('/index.html')
+    window.location.assign('./index.html')
 }
 
 const logoutUser = document.getElementById('logout');
 logoutUser.addEventListener("click", function(){
   localStorage.clear();
-  window.location.assign("/index.html");
+  window.location.assign("./index.html");
 });
 
 const tabla = (function (respuestaJson){
