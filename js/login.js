@@ -16,8 +16,6 @@ login.addEventListener("submit", (e) => {
         pass: pass.value,
       };
 
-
-
 validaCredenciales(credenciales)
 .then(function(successStatus) {
   if (successStatus) {

@@ -9,12 +9,10 @@
   <title>PARCIAL 2 LPPA</title>
 </head>
 <body>
-  <header>
-    <nav>
-        <ul class="nav-list">
-            <li id="logout" class="nav-logout">Logout</li>
-        </ul>
-    </nav>
+<header>
+<form class="salir">
+<input id="salir"  class="enviar-form btn btn-primary" type="submit" value="Logout">
+</form>
 </header>
 <div class="contenido">
 <table id="tabla">
@@ -32,6 +30,18 @@
 <tbody class="table-body" id="tableContainer">
 </tbody>
 </table>
+       <!-- MODAL -->
+       <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+
+            </div>
+            <div class="modal-body">
+                <p class="errorModal">La web no pudo cargar correctamente.</p>
+            </div>
+        </div>
+      </div>
 </div>
 <script src="./js/dashboard.js"></script>
 <footer>  
