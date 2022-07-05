@@ -42,7 +42,7 @@ function chequeaCredenciales (){
 }*/
 
 if (key === undefined || key === null) {
-    window.location.assign('file:///Users/gonzalorescia/Desktop/UAI/Materias/4to/LPPA/Parcial%202/parcial2/index.html')
+    window.location.assign('/index.html')
 }
 
 const logoutUser = document.getElementById('logout');

@@ -5,7 +5,7 @@ let inicioSesion = 0;
 
 let varGlob = localStorage.getItem("inicioSesion");
 if (varGlob == 1) {
-    window.location.assign('file:///Users/gonzalorescia/Desktop/UAI/Materias/4to/LPPA/Parcial%202/parcial2/dashboard.html');
+    window.location.assign('/dashboard.html');
 }
 
 
@@ -21,7 +21,7 @@ validaCredenciales(credenciales)
     console.log(successStatus)
   if (successStatus) {
     /*guardaCredenciales(credenciales)*/
-    window.location.assign('file:///Users/gonzalorescia/Desktop/UAI/Materias/4to/LPPA/Parcial%202/parcial2/dashboard.html')
+    window.location.assign('/dashboard.html')
     inicioSesion = 1;
     localStorage.setItem("inicioSesion", inicioSesion);
   } else {
@@ -97,15 +97,15 @@ if (inicioSesion==0){
             if (successStatus) {
                 inicioSesion = 1;
                 localStorage.setItem("inicioSesion", 1);
-              window.location.assign('file:///Users/gonzalorescia/Desktop/UAI/Materias/4to/LPPA/Parcial%202/parcial2/dashboard.html')
+              window.location.assign('/dashboard.html')
             }
           })
           .catch(function(error) {
             console.log(error);
           })
     } else {
-        if (window.location.origin == 'file:///Users/gonzalorescia/Desktop/UAI/Materias/4to/LPPA/Parcial%202/parcial2/dashboard.html'){
-          window.location.assign('file:///Users/gonzalorescia/Desktop/UAI/Materias/4to/LPPA/Parcial%202/parcial2/index.html')
+        if (window.location.origin == '/dashboard.html'){
+          window.location.assign('/index.html')
         }
     }
     console.log(inicioSesion)
