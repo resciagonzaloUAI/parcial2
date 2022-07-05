@@ -36,7 +36,7 @@ const tabla = (function (respuestaJson){
       </tr>`
   }
 });
-fetch('https://basic-server-one.vercel.app/users1111')
+fetch('https://basic-server-one.vercel.app/users')
 .then(function(respuesta){
   return respuesta.json();
 })
