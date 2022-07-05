@@ -14,7 +14,7 @@ validaCredenciales(credenciales)
 .then(function(successStatus) {
   if (successStatus) {
     guardaCredenciales(credenciales)
-    window.location.assign('/dashboard.html')
+    window.location.href('/dashboard.html')
   } else {
     modal.style.display = "block";
   }
